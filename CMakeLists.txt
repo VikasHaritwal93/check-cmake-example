@@ -22,6 +22,11 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage -O0")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
 
 add_subdirectory(src)
+set(ENABLE_VALGRIND OFF CACHE BOOL "Enable Valgrind")
+if(NOT ENABLE_VALGRIND)
+    add_definitions(-DVALGRIND_TESTS=0)
+endif()
+
 
 enable_testing()
 
