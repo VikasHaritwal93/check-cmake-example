@@ -26,6 +26,7 @@ add_subdirectory(src)
 enable_testing()
 
 add_subdirectory(tests)
+add_subdirectory(src)
 
 # Add build target to generate Coverage Test Report to all compiled object files
 find_program(GCOV gcov)
